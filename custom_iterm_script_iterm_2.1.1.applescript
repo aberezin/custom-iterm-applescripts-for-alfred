@@ -17,7 +17,10 @@ on alfred_script(q)
 				tell application \":Applications:iTerm.app\"
 					activate
 					try
-						set myterm to the first terminal
+						-- set myterm to the first terminal
+						-- Ideally, we would open an existing terminal in the current workspace and if none, open a new terminal.
+						-- But I dont know how to do that.
+						set myterm to (make new terminal)
 					on error
 						set myterm to (make new terminal)
 					end try
